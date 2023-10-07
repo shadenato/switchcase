@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>PEDIDO FAST FOOD</h1>
+    <h2>Cardápio:</h2>
+
+    <div id="resultado"></div>
+    <br>
+    <table border="2px" width="600px">
+        <tr>
+            <th>Opção <br>(única)</th>
+            <th>Promoção</th>
+            <th>Especificação</th>
+            <th>Preço (R$)</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Big Super Sanduba</td>
+            <td>2 hambúrgueres, queijo, batata <br>frita e refrigerante</td>
+            <td>5,00</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Quase Super Sanduba</td>
+            <td>1 hambúrguer, batata frita e<br> refrigerante</td>
+            <td>3,00</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Mirradus Sanduba</td>
+            <td>1 misto quente e refrigerante</td>
+            <td>1,50</td>
+        </tr>
+        <tr><td colspan="4"><center><button onclick="myFunction()">Clique para fazer o pedido</button></center></td></tr>
+    </table>
+
+
+
+    <script>
+        function myFunction() {
+            let opcao = Number(prompt("Digite a opção desejada:"));
+            let texto = "";
+            switch (opcao) {
+                case 1:
+                    texto = "Opção selecionada foi a 1. Valor R$5,00."
+                    break;
+                case 2:
+                    texto = "Opção selecionada foi a 2. Valor R$3,00."
+                    break;
+                case 3:
+                    texto = "Opção selecionada foi a 3. Valor R$1,50."
+                    break;
+            }
+        }
+
+            document.getElementById("resultado").innerHTML = texto;
+    </script>
+
+</body>
+
+</html>

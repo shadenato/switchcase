@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comissão</title>
+</head>
+<body>
+
+<!--4. Uma empresa paga a seus funcionários R$ 1,00 de comissão para cada produto
+    vendido. Entretanto, se forem vendidos mais de 250 produtos, o valor aumenta para
+    R$ 1,50. Se a quantidade for superior a 500 produtos, o valor da comissão sobe para
+    R$ 2,00. Monte um algoritmo para ler o nome de um funcionário e a quantidade de
+    produtos que ele vendeu. Esse algoritmo também deverá imprimir o nome do
+    funcionário e o total de comissão que ele receberá. -->
+
+<h1>SISTEMA DE COMISSÃO</h1>
+<div id="resultado"></div>
+
+<script>
+    let nome = prompt("Digite o nome do funcionário: ")
+    let quantidade = Number(prompt("Digite o número de vendas: "));
+    let comissao = Number("");
+
+     switch(true){
+        case quantidade<250 :
+            comissao=quantidade*1;
+        break;
+        case quantidade>500 :
+            comissao=quantidade*2;
+        break;
+        default:
+            comissao=quantidade*1.5;
+        break;
+        }  
+    
+        document.getElementById("resultado").innerHTML = "O funcionário " + nome + " ganhou a comissão de R$" + comissao + ", vendendo " + quantidade + " itens."
+
+</script>
+
+</body>
+</html>

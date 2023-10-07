@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Notas</title>
+</head>
+<body>
+
+    <!--     1. Sobre um aluno e suas notas.
+    a) Leia o nome do aluno.
+    b) Leia três notas do aluno e faça a média aritmética entre elas.
+    c) Verifique se o aluno foi aprovado (média maior ou igual a 6,0). Depois, imprima a
+    mensagem "O aluno <nome do aluno> foi aprovado com média <o valor da média>".
+    d) Verifique se o aluno foi reprovado (média inferior a 6,0). Depois, imprima a
+    mensagem "O aluno <nome do aluno> foi reprovado com média <o valor da média>".
+    e) Coloque as três notas do aluno em ordem decrescente. -->
+
+    <h1>Sistema de Notas</h1>
+    <div id="resultado"></div>
+
+    <script>
+        let nome = prompt("Digite o nome do aluno: ");
+        let n1 = Number(prompt("Digite a 1ª nota do aluno: "));
+        let n2 = Number(prompt("Digite a 2ª nota do aluno: "));
+        let n3 = Number(prompt("Digite a 3ª nota do aluno: "));
+        let media = ""
+        let aprovacao = ""
+        
+        media = Math.round((n1 + n2 + n3)/3)
+
+        switch(true){
+            case media<6:
+            aprovacao = "reprovado";
+            break;
+            case media>=6:
+            aprovacao = "aprovado";
+            break;
+        }
+
+        let numeros = [n1, n2, n3]
+        numeros.sort((a,b) => b - a);
+
+        document.getElementById("resultado").innerHTML = "O aluno " + nome + " foi " + aprovacao + " com média " + media + ". <br> As notas em ordem descrecente são: " + numeros;
+
+    </script>
+
+
+</body>
+</html>
+

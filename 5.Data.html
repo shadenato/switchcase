@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data</title>
+</head>
+<body>
+    
+    <!-- 5. Faça um algoritmo para ler uma data (por exemplo, 12/02/2000) e imprima o dia, o
+    nome do mês e o ano (por exemplo, 12 de fevereiro de 2000) -->
+
+    <h1>SISTEMA DE DATA POR EXTENSO</h1>
+    <div id="resultado"></div>
+
+    <script>
+
+        let data = String(prompt("Digite uma data (00/00/0000): "));
+        let dia = data.substr(0, 2);
+        let mes = data.substr(3, 2);
+        let ano = data.substr(6, 4);
+        let mes_ext = String("");
+
+        switch(true){
+            case mes == "01":
+                mes_ext="janeiro";
+            break;
+            case mes == "02":
+                mes_ext="fevereiro";
+            break;
+            case mes == "03":
+                mes_ext="março";
+            break;
+            case mes == "04":
+                mes_ext="abril";
+            break;
+            case mes == "05":
+                mes_ext="maio";
+            break;
+            case mes == "06":
+                mes_ext="junho";
+            break;
+            case mes == "07":
+                mes_ext="julho";
+            break;
+            case mes == "08":
+                mes_ext="agosto";
+            break;
+            case mes == "09":
+                mes_ext="setembro";
+            break;
+            case mes == "10":
+                mes_ext="outubro";
+            break;
+            case mes == "11":
+                mes_ext="novembro";
+            break;
+            case mes == "12":
+                mes_ext="dezembro";
+            break;
+        }
+        
+        document.getElementById("resultado").innerHTML = "A data é " + dia + " de " + mes_ext + " de " + ano + "."
+
+    </script>
+</body>
+</html>

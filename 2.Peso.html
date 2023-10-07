@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 2. Leia três nomes de pessoas e seus pesos. Depois, imprima os dados (nome e peso) em
+    ordem decrescente de peso. -->
+
+    <h1>Sistema de controle de peso</h1>
+    <div id="resultado"></div>
+
+
+    <script>
+
+        let nome1 = prompt("Digite o nome da primeira pessoa: ");
+        let peso1 = Number(prompt("Digite o peso da primeira pessoa: "));
+        let nome2 = prompt("Digite o nome da segunda pessoa: ");
+        let peso2 = Number(prompt("Digite o peso da segunda pessoa: "));
+        let nome3 = prompt("Digite o nome da terceira pessoa: ");
+        let peso3 = Number(prompt("Digite o peso da terceira pessoa: "));
+        let pos1 = Number("");
+        let pos2 = Number("");
+        let pos3 = Number("");
+        
+        nome1 = nome1 + " com ";
+        nome2 = nome2 + " com ";
+        nome3 = nome3 + " com ";
+
+        switch (true){
+            case peso1 > peso2 && peso1 > peso3:
+            pos1 = nome1 + peso1;
+            if (peso2 > peso3) {
+                pos2 = nome2 + peso2;
+                pos3 = nome3 + peso3;
+            } else {
+                pos2 = nome3 + peso3;
+                pos3 = nome2 + peso2;
+            }
+            break;
+            case peso2 > peso1 && peso2 > peso3:
+                pos1 = nome2 + peso2;
+            if (peso1 > peso3) {
+                pos2 = nome1 + peso1;
+                pos3 = nome3 + peso3;
+            } else {
+                pos2 = nome3 + peso3;
+                pos3 = nome1 + peso1;
+            }   
+            break;
+            
+            case peso3 > peso1 && peso3 > peso2:
+            pos1 = nome3 + peso3;
+            if (peso1 > peso2) {
+                pos2 = nome1 + peso1;
+                pos3 = nome2 + peso2;
+            } else {
+                pos2 = nome2 + peso2;
+                pos3 = nome1 + peso1;
+            break;
+          }
+        }
+
+
+
+
+        document.getElementById("resultado").innerHTML = "<h3>Ranking de maiores pesos:</h3> <h4>1º lugar</h4>" + pos1 + " kg; <h4>2º lugar</h4>" + pos2 + " kg; <h4>3º lugar</h4>" + pos3 + " kg."; 
+           
+    </script>
+
+    
+</body>
+</html>
